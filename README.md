@@ -23,10 +23,12 @@ npm run dev
 
 After creating this repo from the template:
 
-1. **Run the bootstrap workflow** — Actions → **Setup — New Repo Bootstrap** → Run workflow
+1. **Add admin token secret** — Settings → Secrets → Actions → New secret:
+   `REPO_ADMIN_TOKEN` (token must have repository administration write access)
+2. **Run the bootstrap workflow** — Actions → **Setup — New Repo Bootstrap** → Run workflow
    (creates labels + branch protection)
-2. **Add the API key secret** — Settings → Secrets → Actions → New secret:
+3. **Add the API key secret** — Settings → Secrets → Actions → New secret:
    `ANTHROPIC_API_KEY`
-3. **Fill in this README** — replace `[PROJECT NAME]` and the description above
-4. **Update `.github/copilot-instructions.md`** — replace the stack placeholder
-5. **Update `CONTRIBUTING.md`** — add any project-specific gate rules
+4. **Fill in this README** — replace `[PROJECT NAME]` and the description above
+5. **Update `.github/copilot-instructions.md`** — replace the stack placeholder
+6. **Update `CONTRIBUTING.md`** — add any project-specific gate rules

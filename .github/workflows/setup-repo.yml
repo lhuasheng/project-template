@@ -16,8 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-      contents: write   # needed for branch protection API
+      contents: read
     steps:
       - uses: lhuasheng/shared-sdlc/actions/setup-repo@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          admin-token: ${{ secrets.REPO_ADMIN_TOKEN }}
