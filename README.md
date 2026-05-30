@@ -23,10 +23,9 @@ npm run dev
 
 After creating this repo from the template:
 
-1. **Add admin token secret** — Settings → Secrets → Actions → New secret:
-   `REPO_ADMIN_TOKEN` (token must have repository administration write access)
-2. **Run the bootstrap workflow** — Actions → **Setup — New Repo Bootstrap** → Run workflow
-   (creates labels + branch protection)
+1. **Run the bootstrap workflow** — Actions → **Setup — New Repo Bootstrap** → Run workflow
+   (creates labels)
+2. **Configure branch protection manually** — on `main`, require status check `CI Gates` and 1 approving review
 3. **Add the API key secret** — Settings → Secrets → Actions → New secret:
    `ANTHROPIC_API_KEY`
 4. **Fill in this README** — replace `[PROJECT NAME]` and the description above

@@ -5,7 +5,7 @@ name: Setup — New Repo Bootstrap
 #
 # What it does:
 #   - Creates all standard labels (code-review, bug, feature, priority…)
-#   - Sets branch protection on main (requires CI Gates + 1 approval)
+#   - Does not configure branch protection (set it manually)
 
 on:
   workflow_dispatch:
@@ -16,9 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-      contents: read
     steps:
       - uses: lhuasheng/shared-sdlc/actions/setup-repo@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          admin-token: ${{ secrets.REPO_ADMIN_TOKEN }}
