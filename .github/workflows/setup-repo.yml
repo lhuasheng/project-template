@@ -1,0 +1,23 @@
+name: Setup — New Repo Bootstrap
+
+# Run this ONCE after creating a new project repo from the template.
+# Go to Actions → "Setup — New Repo Bootstrap" → Run workflow.
+#
+# What it does:
+#   - Creates all standard labels (code-review, bug, feature, priority…)
+#   - Sets branch protection on main (requires CI Gates + 1 approval)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    name: Bootstrap Repo
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write   # needed for branch protection API
+    steps:
+      - uses: lhuasheng/shared-sdlc/actions/setup-repo@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
